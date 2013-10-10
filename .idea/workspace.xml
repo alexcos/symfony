@@ -5,9 +5,9 @@
     <ignored path="symfony.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/src/Acme/DemoBundle/Resources/views/Demo/hello.html" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381154493454" ignored="false" />
-    <file path="/DefaultControllerTest.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381323029848" ignored="false" />
+    <file path="/DefaultControllerTest.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381414379316" ignored="false" />
     <file path="/private/var/folders/dj/9znp4yps5112qshntvmtx3h80000gn/T/ide-phpunit.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381247224838" ignored="false" />
-    <file path="/DefaultController.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381410968424" ignored="false" />
+    <file path="/DefaultController.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381414153672" ignored="false" />
     <file path="/Lookup.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381248278104" ignored="false" />
     <file path="/CustomerRole.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381300983063" ignored="false" />
     <file path="/config.yml" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381389491545" ignored="false" />
@@ -19,6 +19,7 @@
     <file path="/Filter.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381399943083" ignored="false" />
     <file path="/Flight.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381400309403" ignored="false" />
     <file path="/DepartArriveRequest.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381403300521" ignored="false" />
+    <file path="/SearchData.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381414023131" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +39,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DefaultControllerTest.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DefaultControllerTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Tests/Controller/DefaultControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="26" selection-start="2570" selection-end="2570" vertical-scroll-proportion="0.78203434">
+            <state line="57" column="28" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-27.166666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="22" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.8812665">
               <folding />
             </state>
           </provider>
@@ -50,7 +60,16 @@
       <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="5" selection-start="3379" selection-end="3379" vertical-scroll-proportion="-27.5">
+            <state line="86" column="178" selection-start="2541" selection-end="2541" vertical-scroll-proportion="-30.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchData.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Entity/SearchData.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="34" selection-start="256" selection-end="256" vertical-scroll-proportion="-4.375">
               <folding />
             </state>
           </provider>
@@ -59,7 +78,7 @@
       <file leaf-file-name="UserProfile.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/common/UserProfile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="869" selection-end="869" vertical-scroll-proportion="-20.625">
+            <state line="14" column="3" selection-start="288" selection-end="288" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -124,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Acme/DemoBundle/Controller/DemoController.php" />
         <option value="/private/var/folders/dj/9znp4yps5112qshntvmtx3h80000gn/T/ide-phpunit.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
@@ -133,13 +151,14 @@
         <option value="$PROJECT_DIR$/src/Alex/AlexBundle/Entity/CustomerRole.php" />
         <option value="$PROJECT_DIR$/vendor/jms/serializer/src/JMS/Serializer/Naming/CamelCaseNamingStrategy.php" />
         <option value="$PROJECT_DIR$/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/services.xml" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/flight/Flight.php" />
         <option value="$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/flight/Filter.php" />
         <option value="$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/flight/DepartArriveRequest.php" />
         <option value="$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/flight/GetFlightAvailInput.php" />
+        <option value="$PROJECT_DIR$/src/Alex/AlexBundle/Entity/SearchData.php" />
         <option value="$PROJECT_DIR$/src/Alex/AlexBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Alex/AlexBundle/Tests/Controller/DefaultControllerTest.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
       </list>
     </option>
   </component>
@@ -652,18 +671,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="2540" height="1327" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26423416" sideWeight="0.67025685" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26423416" sideWeight="0.67025685" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993372" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32974318" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32974318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32974318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -737,13 +756,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/pear/share/pear/PHPUnit/Framework/TestSuite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="755" column="0" selection-start="23613" selection-end="23613" vertical-scroll-proportion="-9.333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/pear/share/pear/PHPUnit/TextUI/TestRunner.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="350" column="0" selection-start="10874" selection-end="10874" vertical-scroll-proportion="-9.666667">
@@ -786,33 +798,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/common/UserProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="869" selection-end="869" vertical-scroll-proportion="-20.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="2082" selection-end="2082" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1381389747000" expanded="true" signature="-1:-1" placeholder="property_naming:" />
-            <marker date="1381389747000" expanded="true" signature="-1:-1" placeholder="parameters:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jms/serializer-bundle/JMS/SerializerBundle/Resources/config/services.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="-0.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/G4/UtilBundle/Tests/G4/G4WebTestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -842,16 +830,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/G4/AREBundle/Entity/com/allegiant/are/dto/common/UserProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="3" selection-start="288" selection-end="288" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/G4/UtilBundle/Tests/G4/G4WebTestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Entity/SearchData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="34" selection-start="256" selection-end="256" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="5" selection-start="3379" selection-end="3379" vertical-scroll-proportion="-27.5">
+        <state line="86" column="178" selection-start="2541" selection-end="2541" vertical-scroll-proportion="-30.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Alex/AlexBundle/Tests/Controller/DefaultControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="26" selection-start="2570" selection-end="2570" vertical-scroll-proportion="0.78203434">
+        <state line="57" column="28" selection-start="1812" selection-end="1812" vertical-scroll-proportion="-27.166666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="22" selection-start="2973" selection-end="2973" vertical-scroll-proportion="0.8812665">
           <folding />
         </state>
       </provider>

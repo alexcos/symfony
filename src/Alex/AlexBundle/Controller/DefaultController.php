@@ -5,6 +5,7 @@ namespace Alex\AlexBundle\Controller;
 use Alex\AlexBundle\Entity\CustomerPermission;
 use Alex\AlexBundle\Entity\CustomerRole;
 use Alex\AlexBundle\Entity\Lookup;
+use Alex\AlexBundle\Entity\SearchData;
 use Doctrine\Common\Collections\ArrayCollection;
 use G4\AREBundle\Entity\com\allegiant\are\dto\common\PayLoadAttributes;
 use G4\AREBundle\Entity\com\allegiant\are\dto\common\UserProfile;
@@ -51,48 +52,7 @@ class DefaultController extends Controller
 
         $serializer = $this->container->get('jms_serializer');
 
-
-        /*
-        $originalLookup = new Lookup();
-        $arrayCollection = new ArrayCollection();
-
-        $customerRole = new CustomerRole();
-        $customerRole->setId(1);
-        $customerRole->setName("myallegiant");
-
-        $customerRole2 = new CustomerRole();
-        $customerRole2->setId(2);
-        $customerRole2->setName("role name");
-
-        $customerPermission = new CustomerPermission();
-        $customerPermission->setId(16);
-        $customerPermission->setName("Apply a voucher as a form of payment");
-
-        $customerPermission2 = new CustomerPermission();
-        $customerPermission2->setId(7);
-        $customerPermission2->setName("Add Bags to a Booking");
-
-        $permissionsArrayCollection = new ArrayCollection();
-        $permissionsArrayCollection->add($customerPermission);
-        $permissionsArrayCollection->add($customerPermission2);
-
-        $customerRole->setCustomerPermission($permissionsArrayCollection);
-
-
-        $arrayCollection->add($customerRole);
-        $arrayCollection->add($customerRole2);
-
-        $originalLookup->setCustomerRole($arrayCollection);
-
-        $serializedLookup = $serializer->serialize($originalLookup, 'json');
-        #echo $serializedLookup;
-        */
-
         $data = $serializer->deserialize($response->getContent(), 'Alex\AlexBundle\Entity\Lookup', 'json');
-        #$data = $serializer->deserialize($serializedLookup, 'Alex\AlexBundle\Entity\Lookup', 'json');
-
-
-        #$processedResponse = json_decode($response->getContent());
 
         return $data;
     }
@@ -112,8 +72,8 @@ class DefaultController extends Controller
 
     }
 
-    /** @param string $date */
-    public function createFlightAvailInput($date) {
+    /** @param SearchData $data */
+    public function createFlightAvailInput($data) {
 
         $flightVoucher = null;
         $promoCode = null;
@@ -124,7 +84,7 @@ class DefaultController extends Controller
         $classOfService = new flight\Filter();
         $classOfService->setType("INCLUDE");
 
-        $departArriveRequestEntity = $this->buildDepartArriveRequest("1", "ORIGIN_OUTBOUND", true, $date, 7, 7, "00:00:00", 0, 0, "BLI", "LAS", 24, 70);
+        $departArriveRequestEntity = $this->buildDepartArriveRequest("1", "ORIGIN_OUTBOUND", true, $data->date, 7, 7, "00:00:00", 0, 0, $data->departAirport, $data->arriveAirport, 24, 70);
         $departArriveRequest = array($departArriveRequestEntity);
 
         $flightEntity = null;
@@ -154,32 +114,6 @@ class DefaultController extends Controller
         return $getFlightAvailInput;
 
     }
-
-    /*
-
-    /**
-     * @param array $flightVoucher
-     * @param string $promoCode
-     * @param flight\FlightTravelerProfile $travelerProfile
-     * @param flight\Filter $classOfService
-     *
-     * array of com\allegiant\are\dto\flight\Flight entities
-     *  @param array $flight
-     *
-     * array of com\allegiant\are\dto\flight\DepartArriveRequest instances
-     *  @param array $departArriveRequest
-     *
-     * @param string $airportOfOrigin
-     * @param integer $maxStops
-     * @return flight\GetFlightAvailInput
-     *
-    public function createFlightAvailInput($flightVoucher, $promoCode, $travelerProfile, $classOfService, $flight, $departArriveRequest, $airportOfOrigin, $maxStops, $callerInfo, $payloadAttributes) {
-
-        return $getFlightAvailInput;
-
-    }
-
-    */
 
     /**
      * @param GetFlightAvailInput $getFlightAvailInput
@@ -277,7 +211,7 @@ class DefaultController extends Controller
     public function buildPayloadAttributes($bookingTypeID, $bookingChannelID, $transactionIdentifier, $version, $timeStamp)
     {
         $payloadAttributes = new PayLoadAttributes();
-        $payloadAttributes->setBookingTypeID($bookingChannelID);
+        $payloadAttributes->setBookingTypeID($bookingTypeID);
         $payloadAttributes->setBookingChannelID($bookingChannelID);
         $payloadAttributes->setTransactionIdentifier($transactionIdentifier);
         $payloadAttributes->setVersion($version);
