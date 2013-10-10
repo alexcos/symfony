@@ -1,0 +1,22 @@
+{% extends 'G4UtilBundle:Util:layout_stats.html.twig' %}
+
+{% block title %}Search Statistics{% endblock %}
+
+{#############################################################################
+ # the main page content
+ #############################################################################}
+{% block main_contents %}
+<h2>Request Details</h2>
+
+<div class="block">
+{% 	if result.count %}
+	<p>A number of {{ result.count }} items has been found.</p>
+	<hr />
+{%		for item in result %}
+	<p>{{ item }}</p>
+{%		endfor %}
+{% 	else %}
+	<p class="removed">No such item. Was probably deleted in the meantime.</p>
+{% 	endif %}
+</div>
+{% endblock %}

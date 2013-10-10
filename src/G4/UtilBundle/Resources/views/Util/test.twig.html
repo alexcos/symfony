@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+    <head>
+        <title>Symfony config test for environment {{ env }} on {{ host }}</title>
+        <link href="{{ asset('bundles/g4util/css/configpage.css') }}" media="screen" rel="stylesheet" type="text/css" />
+        <script src="{{ asset('bundles/g4resweb/js/jquery-1.7.1.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/g4util/js/configpage.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('bundles/g4util/js/jquery.scrollTo.min.js') }}" type="text/javascript"></script>
+    </head>
+    <body>
+
+        <div id='header'>
+            <div class="inner">
+                <img src='{{ asset('bundles/g4util/images/logo.png') }}' alt='' />
+            </div>
+        </div>
+
+        <ul id='nav'>
+            <div class="inner">
+                <li><a href='#memcache' title='Memcache'>Memcache</a></li>
+                <li><a href='#couch' title="Couch">Couch</a></li>
+                <li><a href='#meta' title='Meta'>Metadata/Dockets/Drupal</a></li>
+                <li><a href='#resweb' title='Resweb'>Resweb</a></li>
+                <li><a href='#otares' title='Otares'>Otares</a></li>
+                <li><a href='#vouchers' title='Vouchers'>Vouchers</a></li>
+                <li><a href='#rest' title='Rest/Pie'>Rest/Pie</a></li>
+                <li><a href='#symfony' title='Symfony'>Symfony</a></li>
+                <li><a href='#parameters' title='Parameters'>Parameters</a></li>
+            </div>
+        </ul>
+
+        <div class="inner">
+
+            <h1>Symfony config test for environment {{ env }} on {{ host }}</h1>
+
+            <script>
+                if (!window.jQuery) {
+                    document.writeln("<div><p>If you can't see images, or javascript is not working then you're web assets are not set up.  This needs doing once per install:</p><p><tt>app/console --env=skunk assets:install --symlink web</tt></p></div>");
+                }
+            </script>
+
+            <div class="environments">
+                <div class='button'>
+                    <form action='{{ path('TestMemcache') }}' id='memcacheform'>Memcache</form>
+                    <img id='btnmemcache' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+                <div class='button'>
+                    <form action='{{ path('TestCouch') }}' id='couchform'>Couch</form>
+                    <img id='btncouch' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+                <div class='button'>
+                    <form action='{{ path('TestMeta') }}' id='metaform'>Meta</form>
+                    <img id='btnmeta'  src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+                <div class='button'>
+                    <form action='{{ path('TestResweb') }}' id='reswebform'>Resweb</form>
+                    <img id='btnresweb' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+
+                <div class='button'>
+                    <form action='{{ path('TestOtares') }}' id='otaresform'>OtaRes</form>
+                    <img id='btnotares' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+
+                <div class='button'>
+                    <form action='{{ path('TestVouchers') }}' id='vouchersform'>Vouchers</form>
+                    <img id='btnvouchers' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+
+                <div class='button'>
+                    <form action='{{ path('TestRest') }}' id='restform'>Rest/Pie</form>
+                    <img id='btnrest' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+                <div class='button'>
+                    <form action='{{ path('TestSy2mnt') }}' id='symfform'>Symfony</form>
+                    <img id='btnsymf' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+                <div class='button'>
+                    <form action='{{ path('TestParams') }}' id='paramsform'>Parameters</form>
+                    <img id='btnparams' src='{{ asset('bundles/g4util/images/ajax-loader.gif') }}' width='50' height='50' alt='loader'/>
+                </div>
+            </div>
+
+            <h2 id='memcache'><a href='{{ path('TestMemcache') }}' target="_blank" title="Couch">Memcache</a></h2>
+            <div class='memcacheresult result'></div>
+
+            <h2 id='couch'><a href='{{ path('TestCouch') }}' target="_blank" title="Couch">Couch</a></h2>
+            <div class='couchresult result'></div>
+
+            <h2 id='meta'><a href='{{ path('TestMeta') }}' target="_blank" title="Metadata/Dockets/Drupal">Metadata/Dockets/Drupal</a></h2>
+            <div class='metaresult result'></div>
+
+            <h2 id='resweb'><a href='{{ path('TestResweb') }}' target="_blank" title="Resweb">Resweb</a></h2>
+            <div class='reswebresult result'></div>
+
+            <h2 id='otares'><a href='{{ path('TestOtares') }}' target="_blank" title="Otares">Otares</a></h2>
+            <div class='otaresresult result'></div>
+
+            <h2 id='vouchers'><a href='{{ path('TestVouchers') }}' target="_blank" title="Vouchers">Vouchers</a></h2>
+            <div class='vouchersresult result'></div>
+
+            <h2 id='rest'><a href='{{ path('TestRest') }}' target="_blank" title="Rest">Rest/Pie</a></h2>
+            <div class='restresult result'></div>
+
+            <h2 id='symfony'><a href='{{ path('TestSy2mnt') }}' target="_blank" title="Symfony">Symfony</a></h2>
+            <div class='symfonyresult result'></div>
+
+            <h2 id='version'><a target="_blank" title="Versions">Apache & php Version</a></h2>
+            <div>{{version}}</div>
+
+            <h2 id='Parameters'><a href='{{ path('TestParams') }}' target="_blank" title="Parameters">Parameters</a></h2>
+
+            <div class='config'>
+                <table class="appendable">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>?</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='paramsresult'> </div>
+
+        </div>
+
+
+        <img id='passimg' src='{{ asset('bundles/g4util/images/pass.png') }}' style='visibility: hidden' />
+             <img id='failimg' src='{{ asset('bundles/g4util/images/fail.png') }}' style='visibility: hidden' />
+             <img id='skiptest' src='{{ asset('bundles/g4util/images/skip-test.png') }}' style='visibility: hidden' />
+
+    </body>
+</html>
+

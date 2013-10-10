@@ -1,0 +1,130 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 75%;
+  background: #e8e8e8;
+}
+
+h1 {
+  color: #222;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+h2 {
+  color: #1487d4;
+  margin: 1em 0;
+  clear: both;
+}
+
+h2 + div {
+  float: left;
+  margin: 0 0 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background: #cdcdcd;
+}
+
+td {
+  border: 1px black solid;
+  text-align: left;
+  color: #494d4f;
+  padding: 5px;
+}
+
+th {
+  font-weight: bold;
+  width: 160px;
+  border: 1px black solid;
+  text-align: left;
+  padding: 5px;
+}
+
+.button {
+  float: left;
+  text-align: center;
+  padding: 3px 15px;
+  margin: 3px;
+  width: 70px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.config {
+  float: left;
+  width: 600px;
+  margin-right: 10px;
+  font-size: 85%;
+}
+
+.result {
+  border: 1px black solid;
+  float: left;
+  width: 650px;
+  height: 100px;
+  scroll: auto;
+  overflow:scroll;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+.environments {
+  float: left;
+  padding: 3px;
+  margin: 0 0 20px;
+  background: #fdfdfd;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#header {
+  padding: 1em 0;
+  background: #2f2f2f;
+  background-image: -ms-linear-gradient(top, #2f2f2f 0%, #1b1a1a 100%);
+  background-image: -moz-linear-gradient(top, #2f2f2f 0%, #1b1a1a 100%);
+  background-image: -o-linear-gradient(top, #2f2f2f 0%, #1b1a1a 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #2f2f2f), color-stop(1, #1b1a1a));
+  background-image: -webkit-linear-gradient(top, #2f2f2f 0%, #1b1a1a 100%);
+  background-image: linear-gradient(top, #2f2f2f 0%, #1b1a1a 100%);
+}
+
+#nav {
+  background: #222;
+  border-top: 1px solid #353535;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav li {
+  display: inline;
+}
+
+#nav li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px 30px 15px 0;
+  line-height: 3.3;
+}
+
+#nav li a:hover {
+  color: #1487d4;
+}
+
+.error {
+    color: #dd0000;
+}

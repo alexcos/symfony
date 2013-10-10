@@ -1,0 +1,64 @@
+[
+    {
+        "id": 842,
+        "url": "\/hotel\/us\/nv\/las-vegas\/aria-resort-casino-citycenter",
+        "name": "ARIA RESORT & CASINO AT CITY CENTER",
+        "address": "<p>3730 Las Vegas Boulevard <br \/>Las Vegas, NV 89109<\/p>\n",
+        "phone": "8663597757",
+        "latitude": "36.107142",
+        "longitude": "-115.173667",
+        "mapurl": "http:\/\/maps.google.com\/maps?f=q&hl=en&z=14&ll=36.10714%2C-115.17367",
+        "price_pp": 998.38,
+        "total": 998.38,
+        "saving": 0,
+        "currency": "USD",
+        "description": "<p>ARIA Resort &amp; Casino, located in the heart of CityCenter, is a dramatic, yet graceful combination of striking architecture and sustainable design. From the soaring three story lobby to the naturally lit casino, ARIA evokes openness and freedom. Impeccable hospitality and personalized attention joins with an incredible array of amenities, providing each guest an unmatched experience. The resort features a variety of dining experiences, a dynamic collection of lounges and bars, a nightclub, luxury spa, pools and entertainment fit for a king, literally: Cirque du Soleil presents an exclusive performance based on the music of Elvis.<\/p>\n<p>The contemporary architecture is complemented by the warm, intimate decor elements of reclaimed wood and native stone. ARIA&#39;s 4,004 guest rooms, including 568 suites, introduces integrated technologies allowing each guest to intricately choreograph their personal preferences. ARIA&#39;s modern tower is uniquely designed to deliver expansive floor-to-ceiling windows from every guest room with a unique corner-window offering breathtaking panoramic views. ARIA has the U.S. Green Building Council&#39;s Leadership in Energy and Environmental Design Certification.<\/p>\n",
+        "score": "5",
+        "image_url": "\/sites\/default\/files\/hotel\/842\/ext2.jpg",
+        "limited_availability": false,
+        "rooms": [
+            {
+                "id": 592,
+                "price": 0,
+                "name": "Deluxe City Room",
+                "includes": [
+
+                ]
+            }
+        ],
+        "promotions": [
+
+        ]
+    },
+    {
+        "id": 10,
+        "url": "\/hotel\/us\/nv\/las-vegas\/tropicana-las-vegas-hotel-casino",
+        "name": "TROPICANA",
+        "address": "<p>3801 Las Vegas Blvd So. <br \/>Las Vegas, NV 89109<\/p>\n",
+        "phone": "7027392222",
+        "latitude": "36.103128",
+        "longitude": "-115.172768",
+        "mapurl": "http:\/\/maps.google.com\/maps?f=q&hl=en&z=14&ll=36.10313%2C-115.17277",
+        "price_pp": 1564.14,
+        "total": 1564.14,
+        "saving": 0,
+        "currency": "USD",
+        "description": "<p>Tropicana Las Vegas has redefined the expectations of today&#39;s global travelers. The all new South Beach-inspired changes to the hotel include a fresh redesign of every new best-in-class room and suite, the casino, the conference center and exhibition hall, the transformation of the legendary four-acre pool area into Nikki Beach Club and Club Nikki - the ultimate nightclub and beach club experience, several new restaurants, bars, a new poker room, a new race and sports book, and a new spa and fitness center. Entertainment at Tropicana Las Vegas includes Gladys Knight, the Brad Garrett Comedy Club, and the Mob Experience. The look and feel of the new Tropicana Las Vegas is vibrant and exciting, filled with the sultry rhythm of a hot Havana night.<\/p>\n",
+        "score": "4",
+        "image_url": "\/sites\/default\/files\/hotel\/10\/ext2.jpg",
+        "limited_availability": false,
+        "rooms": [
+            {
+                "id": 830,
+                "price": 0,
+                "name": "STANDARD",
+                "includes": [
+
+                ]
+            }
+        ],
+        "promotions": [
+
+        ]
+    }
+]

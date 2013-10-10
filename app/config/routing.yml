@@ -1,0 +1,12 @@
+g4_are:
+    resource: "@G4AREBundle/Resources/config/routing.yml"
+    prefix:   /
+
+g4_flight:
+    resource: "@G4FlightBundle/Resources/config/routing.yml"
+    prefix:   /
+
+alex_alex:
+    resource: "@AlexAlexBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,24 @@
+{% extends 'G4UtilBundle:Util:layout_stats.html.twig' %}
+
+{% block title %}Search Statistics{% endblock %}
+
+{#############################################################################
+ # the main page content
+ #############################################################################}
+{% block main_contents %}
+<h2>Requests</h2>
+
+Found {{ results.count }} user requests.
+
+{% if results.count > 0 %}
+<table>
+{%   for i in results %}
+	<tr>
+		<td><a href="stats/detail/{{ i.id }}">{% if i.getTimestampDisplay %}{{ i.getTimestampDisplay }}{% else %}{{ i.id }}{% endif %}</a></td>
+		<td class="quiet hide">{{ i }}</td>
+	</tr>
+{%   endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

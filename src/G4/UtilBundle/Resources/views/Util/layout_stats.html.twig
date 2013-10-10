@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/jirgnassetsblueprint/css/plugins/fancy-type/screen.css') }}" media="screen, projection" />
+<link rel="stylesheet" href="{{ asset('bundles/jirgnassetsblueprint/css/plugins/buttons/screen.css') }}" media="screen, projection" />
+{% endblock %}
+
+{% block body %}
+
+<div id="header" class="span-24 last">
+	<h1><img src="{{ asset('bundles/g4util/images/logo-line-chart.png') }}" />Search Statistics</h1>
+</div>
+<hr />
+<div id="subheader" class="span-24 last">
+	<h3 class="alt">Know details on what users are searching for and when.</h3>
+</div>
+<hr />
+
+<div class="span-13 colborder" id="main_contents">
+{% block main_contents %}
+@TODO implement the main page content.
+{% endblock %}
+</div><!-- #requests -->
+
+{% block sidebar %}
+<div class="span-10 last" id="sidebar">
+	<div id="sidebar_operations">
+		<h3>Operations</h3>
+
+		<a href="#" class="button negative">
+			<img src="{{ asset('bundles/jirgnassetsblueprint/css/plugins/buttons/icons/cross.png') }}" alt=""/> Clean all
+		</a>
+	</div>
+	<hr />
+
+</div><!-- #sidebar -->
+{% endblock %}
+<hr />
+
+{% endblock %}

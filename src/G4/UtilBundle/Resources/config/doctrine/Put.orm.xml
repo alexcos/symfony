@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="G4\UtilBundle\Entity\Put" table="put" collate='utf8_unicode_ci' charset='utf8'>
+
+        <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        
+        <field
+            name="json"
+            type="string"
+            column="json"
+            length="1000"
+            />
+
+        <!--
+        <many-to-one
+            field="search" 
+            target-entity="Search"
+            inversed-by="put"
+            />
+            -->
+
+        <one-to-many
+            field='searches'
+            target-entity="Search"
+            inversed-by='put'
+            mapped-by='put'
+            />
+
+    </entity>
+</doctrine-mapping>
+

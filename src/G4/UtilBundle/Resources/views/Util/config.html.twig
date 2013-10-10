@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Symfony Config</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 75%;
+    }
+
+    input[type=text] {
+        width: 600px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+    
+    td, th {
+        border: 1px black solid;
+        text-align: left;
+    }
+
+    .key {
+        width: 200px;
+    }
+
+    .title {
+        text-align: center;
+        background: #dcdcdc;
+    }
+</style>
+</head>
+<body>
+<h1>Symfony config for environment {{ env }}</h1>
+
+<h2>Couch</h2>
+<div>
+    <p><em>Couch connection has been made</em></p>
+    <p><strong>Just because a connection was made does mean the setting is correct.</strong> The couch config is burried under the ORM layer of Symfony.  I can't figure out how to display it.  Please check your config file manually.  Check the file <tt>app/config/config_{{ env }}.yml</tt> and look for a section like this:</p>
+    <p>
+        <pre>
+doctrine_couch_db:
+    client:
+        # change it to 'localhost' if you want to work offline
+        default_connection: default
+        connections:
+            default:
+                dbname: carts
+                host: HOSTNAME.OF.COUCH.SERVER
+                port: PORT_NUMBER
+                user: USERNAME
+                password: PASSWORD
+                type: socket
+    odm:
+        auto_mapping: true
+
+        </pre>
+    </p>
+</div>
+
+<h2>Memcache</h2>
+<table>
+    <tr class='title'>
+        <th class='key'>Key</th><th>Value</th>
+    </tr>
+    {% for key, value in memcache %} 
+        <tr class='test'>
+            <th class='key'>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %} 
+</table>
+
+<h2>Dockets</h2>
+<table>
+    <tr class='title'>
+        <th class='key'>Key</th><th>Value</th>
+    </tr>
+    {% for key, value in docketservice %} 
+        <tr class='test'>
+            <th class='key'>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %} 
+</table>
+
+<h2>Services</h2>
+<table>
+    <tr class='title'>
+        <th class='key'>Key</th><th>Value</th>
+    </tr>
+    {% for key, value in services %} 
+        <tr class='test'>
+            <th class='key'>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %} 
+</table>
+
+<h2>Res Web</h2>
+<table>
+    <tr class='title'>
+        <th class='key'>Key</th><th>Value</th>
+    </tr>
+    {% for key, value in getavail %} 
+        <tr class='test'>
+            <th class='key'>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %} 
+</table>
+
+<h2>Other</h2>
+<table>
+    <tr class='title'>
+        <th class='key'>Key</th><th>Value</th>
+    </tr>
+    {% for key, value in other %} 
+        <tr class='test'>
+            <th class='key'>{{ key }}</th>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %} 
+</table>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+imports:
+    - { resource: config_[ENV NAME].yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+parameters:
+    testing_email: foo@bar.com # this email address is used to receive the confirmation emails for the Shopping Cart Bundle Functional Tests

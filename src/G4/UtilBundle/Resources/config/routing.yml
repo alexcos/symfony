@@ -1,0 +1,141 @@
+StatsIndex:
+    pattern: /stats
+    defaults: { _controller: G4UtilBundle:Stats:index }
+
+StatsDetail:
+    pattern: /stats/detail/{id}
+    defaults: { _controller: G4UtilBundle:Stats:detail }
+
+PersisterSet:
+    pattern: /persister/{_hash}/{_component}/{_type}.{_format}
+    defaults: { _controller: G4UtilBundle:Persister:set, _component: resweb, _type: response, _format: json }
+    requirements:
+        _method: POST
+
+PersisterGet:
+    pattern: /persister/{_hash}/{_component}/{_type}.{_format}
+    defaults: { _controller: G4UtilBundle:Persister:get, _component: resweb, _type: response, _format: json }
+    requirements:
+        _method: GET
+
+UtilReswebUrl:
+    pattern: /resweburl.{_format}
+    defaults: { _controller: G4UtilBundle:Util:resweburl, _format: html }
+    requirements:
+        _method: GET
+
+UtilRestUrl:
+    pattern: /resturl.{_format}
+    defaults: { _controller: G4UtilBundle:Util:resturl, _format: html }
+    requirements:
+        _method: GET
+
+UtilShowConfig:
+    pattern: /config.{_format}
+    defaults: { _controller: G4UtilBundle:Util:test, _format: html }
+    requirements:
+        _method: GET
+
+Test:
+    pattern: /test
+    defaults: { _controller: G4UtilBundle:Util:test }
+    requirements:
+        _method: GET
+
+TestMemcache:
+    pattern: /test/memcache.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testmemcache, _format: json }
+    requirements:
+        _method: GET
+
+TestCouch:
+    pattern: /test/couch.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testcouch, _format: json }
+    requirements:
+        _method: GET
+
+TestMeta:
+    pattern: /test/meta.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testmeta, _format: json }
+    requirements:
+        _method: GET
+
+TestResweb:
+    pattern: /test/resweb.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testresweb, _format: json }
+    requirements:
+        _method: GET
+
+TestOtares:
+    pattern: /test/otares.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testotares, _format: json }
+    requirements:
+        _method: GET
+
+TestVouchers:
+    pattern: /test/vouchers.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testvouchers, _format: json }
+    requirements:
+        _method: GET
+
+TestRest:
+    pattern: /test/rest.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testrest, _format: json }
+    requirements:
+        _method: GET
+
+TestSy2mnt:
+    pattern: /test/sy2mnt.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testsy2mnt, _format: json }
+    requirements:
+        _method: GET
+
+TestParams:
+    pattern: /test/params.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testparams, _format: json }
+    requirements:
+        _method: GET
+
+TestCouchAvailable:
+    pattern: /test/couchavailable.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testcouchavailable, _format: json }
+    requirements:
+        _method: GET
+
+TestCouchDbExists:
+    pattern: /test/couchdbexists.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testcouchdbexists, _format: json }
+    requirements:
+        _method: GET
+
+TestCouchViewsExists:
+    pattern: /test/couchviewsexists.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testcouchviewsexists, _format: json }
+    requirements:
+        _method: GET
+
+TestCouchReadWrite:
+    pattern: /test/couchreadwrite.{_format}
+    defaults: { _controller: G4UtilBundle:Util:testcouchreadwrite, _format: json }
+    requirements:
+        _method: GET
+
+LookupGenericData:
+    pattern: /meta/resweb/{lookupName}/{key}.{_format}
+    defaults: { _controller: G4UtilBundle:Lookup:getLookup, _format: json }
+    requirements:
+        lookupName: BookingType|RequestSource|Channel|PaymentType|Airport
+        _method: GET
+
+LookupMarket:
+    pattern: /meta/resweb/Market/{key}.{_format}
+    defaults: { _controller: G4UtilBundle:Lookup:getLookupMarket, _format: json }
+    requirements:
+        _method: GET
+
+LookupOta:
+    pattern: /meta/ota/{lookupName}/{key}.{_format}
+    defaults: { _controller: G4UtilBundle:Lookup:getOtaLookup, _format: json, key: null }
+    requirements:
+        _method: GET
+

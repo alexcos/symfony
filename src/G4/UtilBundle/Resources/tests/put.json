@@ -1,0 +1,1 @@
+{"product":"F","rooms":1,"vehicle":"Car Type","origin":{"code":"LAS","city":"Mytle Beach","state":"NV"},"destination":{"code":"LAS","city":"Las Vegas","state":"NV"},"direction":"oneway","travelers":{"adult":1,"child":[6,9],"lap":[1]},"outward":"2011-12-11","returning":"2011-12-15"}

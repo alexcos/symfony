@@ -1,0 +1,77 @@
+[parameters]
+    database_driver   = pdo_mysql
+    mailer_transport="smtp"
+    mailer_host="localhost"
+    mailer_user=""
+    mailer_password=""
+    locale="en"
+    secret="36b6de5f539abeddaf5d499c543471a57b6cb781"
+    g4_profile_service_hash = "36b6de5f539abeddaf5d499c543471a57b6cb781"
+
+    ; Memcache details
+    ; IP or hostname, no hhtp:// eg. memcache.lolacloud.com
+    g4_memcache_server_address[] = "[MCHOST]"
+    ; The port number for memcache, memchache's default port is
+    ; 11211 the default port in G4/lolacloud is 16384
+    g4_memcache_server_port = [MCPORT]
+    g4_memcache_record_ttl = 12000
+
+    ; The address of the drupla server or vips that  submitted the search
+    ; e.g. http://awesomeworks.lolacloud.com
+    g4_drupal = "[DRUPAL]"
+    ; In most cases the same value as for the drupal server
+    ; e.g. http://awesomeworks.lolacloud.com
+    g4_meta = "[META]"
+
+    ; The address of the resweb service to be used with protocol and port
+    ; e.g. http://hvdtomws02.allegiantair.com:8080
+    g4_resweb = "[RESWEB]"
+
+    ; The address for other services -- do not specify a port!
+    ; e.g. http://svdjbshc01.allegiantair.com
+    g4_flightops = "[RESWEB-REST]"
+    g4_flightalerts = "[RESWEB-REST]"
+
+    ;Address for otadb services
+    ; ex.  "http://svdjbshc02.allegiantair.com:8580/otares/v1/api"
+    g4_otadb = "[RESWEB-OTADB]"
+
+     ;Address for voucher services
+    ; ex.  "http://svbjbshc11.sbx.allegiantair.com:8580/vouchers/v1/api"
+    g4_voucherdb = "[RESWEB-VOUCHERDB]"
+
+    ; The location that symfony2 should send serivice request to, in most
+    ; cases this should be itself, e.g. http://localhost
+    g4_sy2mnt = "[SY2MNT]"
+
+    ; The silo name identifies this instance of symfony to resweb when
+    ; making requests.  It defaults to the hostname
+    g4_silo = "[SILO]"
+
+    ; This is the full url to the couch db to log json to
+    g4_debug_logging_server = 'http://[CHHOST]:[CHPORT]/bookingpathlog/'
+
+    ; To enable file logging ensure that the g4_logging_force value
+    ; contains the name of the environment to log, supports multiple
+    ; names as a | delimited list.  TODO Make this an array value
+    ; g4_logging_force = "[ENV NAME]"
+    g4_logging_force = ""
+
+    ; Couch details
+    ; IP or hostname, no hhtp:// eg. couch.lolacloud.com
+    couch_host = [CHHOST]
+    ; The port number for couch, couch's default port is
+    ; 5984 the default port in G4/lolacloud is 44444
+    couch_port = [CHPORT]
+    ; The couch user/passwd that can crate views
+    couch_user = [CHUSER]
+    couch_pass = [CHPASS]
+
+    ; This is the full url to the web resources folder
+    ; Usually something like 'http://127.0.0.1/bundles'
+    g4_sy2web = "[SYWEB]"
+
+    ; Pie Tokenization
+    g4_pie_enabled = true
+    g4_pie_key     = '[PIE_KEY]'
+    g4_pie_lib     = '[PIE LIB]'
