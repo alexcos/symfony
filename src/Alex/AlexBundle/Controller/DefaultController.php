@@ -58,11 +58,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @param string $date
+     * @param SearchData $data
      */
-    public function searchFlightsByDate($date) {
+    public function searchFlightsByDate(SearchData $data) {
 
-        $getFlightAvailInput = $this->createFlightAvailInput($date);
+        $getFlightAvailInput = $this->createFlightAvailInput($data);
 
         $serializedGetFlightAvailInput = $this->serializeFlightAvailInput($getFlightAvailInput);
 
@@ -73,7 +73,7 @@ class DefaultController extends Controller
     }
 
     /** @param SearchData $data */
-    public function createFlightAvailInput($data) {
+    public function createFlightAvailInput(SearchData $data) {
 
         $flightVoucher = null;
         $promoCode = null;
