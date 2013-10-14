@@ -1,7 +1,7 @@
 parameters:
-#    alex_alex.example.class: Alex\AlexBundle\Example
+    alex_alex.flightSearchService.class: Alex\AlexBundle\SearchServices\FlightSearchService
 
 services:
-#    alex_alex.example:
-#        class: %alex_alex.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    alex_alex.flightSearchService:
+        class: %alex_alex.flightSearchService.class%
+        arguments: [@service_container]

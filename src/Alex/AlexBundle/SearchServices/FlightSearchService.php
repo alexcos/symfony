@@ -1,83 +1,31 @@
 <?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: alex
+ * Date: 10/14/13
+ * Time: 4:01 PM
+ * To change this template use File | Settings | File Templates.
+ */
 
-namespace Alex\AlexBundle\Controller;
+namespace Alex\AlexBundle\SearchServices;
 
-use Alex\AlexBundle\Entity\CustomerPermission;
-use Alex\AlexBundle\Entity\CustomerRole;
-use Alex\AlexBundle\Entity\Lookup;
-use Alex\AlexBundle\Entity\Resweb\Market;
+
+use Alex\AlexBundle\Controller\DefaultController;
 use Alex\AlexBundle\Entity\SearchData;
-use Buzz\Message\Response;
-use Doctrine\Common\Collections\ArrayCollection;
 use G4\AREBundle\Entity\com\allegiant\are\dto\common\PayLoadAttributes;
 use G4\AREBundle\Entity\com\allegiant\are\dto\common\UserProfile;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use G4\AREBundle\Entity\com\allegiant\are\dto\flight;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Client;
 
-class DefaultController extends Controller
+class FlightSearchService
 {
 
-    public function indexAction($name)
+    /** @var Container  */
+    private $container;
+
+    function __construct($container)
     {
-        return $this->render('AlexAlexBundle:Default:index.html.twig', array('name' => $name));
-    }
-
-    public function requestService($url, $contentType)
-    {
-
-        $buzz = $this->container->get('buzz');
-
-        $headers = array("Content-Type" => $contentType);
-
-        $response = $buzz->get($url, $headers);
-
-        $processedResponse = json_decode($response->getContent());
-
-        return $processedResponse;
-    }
-
-    public function searchFlightsAction()
-    {
-
-        $json = $this->getRequest()->getContent(); //request->get("searchData");
-
-        $serializer = $this->container->get('jms_serializer');
-
-        $data = $serializer->deserialize($json, 'Alex\AlexBundle\Entity\SearchData', 'json');
-
-        $response = new \Symfony\Component\HttpFoundation\Response($this->searchFlightsByDate($data),
-            200,
-            array('content-type' => 'application/json')
-        );
-
-        return $response;
-
-    }
-
-
-    /**
-     * @param $url
-     * @param $contentType
-     * @return Lookup
-     */
-    public function requestServiceAndConvert()
-    {
-
-        $url = $this->container->getParameter('lookupURL');
-        $contentType = 'application/json';
-
-        $buzz = $this->container->get('buzz');
-
-        $headers = array("Content-Type" => $contentType);
-
-        $response = $buzz->get($url, $headers);
-
-        $serializer = $this->container->get('jms_serializer');
-
-        $data = $serializer->deserialize($response->getContent(), 'Alex\AlexBundle\Entity\Lookup', 'json');
-
-        return $data;
+        $this->container = $container;
     }
 
     /**
@@ -92,6 +40,66 @@ class DefaultController extends Controller
         $serializedGetFlightAvailInput = $this->serializeFlightAvailInput($getFlightAvailInput);
 
         return $this->getFlightAvailRequest($serializedGetFlightAvailInput);
+
+    }
+
+    /**
+     * @param GetFlightAvailInput $getFlightAvailInput
+     * @return string
+     */
+    public function serializeFlightAvailInput($getFlightAvailInput)
+    {
+
+        $serializer = $this->container->get('jms_serializer');
+        $serializedGetFlightAvailInput = $serializer->serialize($getFlightAvailInput, 'json');
+
+        return $serializedGetFlightAvailInput;
+
+    }
+
+    /**
+     * @param string $serializedGetFlightAvailInput
+     * @return string
+     */
+    public function getFlightAvailRequest($serializedGetFlightAvailInput)
+    {
+
+        $buzz = $this->container->get('buzz');
+        $headers = array("Content-Type" => 'application/json');
+        $response = $buzz->post(
+            $this->container->getParameter('flightRequestURL'),
+            $headers,
+            $serializedGetFlightAvailInput
+        );
+
+        //echo $serializedGetFlightAvailInput;
+        return $response;
+
+    }
+
+
+    /**
+     * @return integer
+     * @param string $fromAirport
+     * @param string $toAirport
+     */
+    public function getMarketIdRequest($fromAirport, $toAirport)
+    {
+
+        $airports = $fromAirport . $toAirport;
+
+        $buzz = $this->container->get('buzz');
+        $headers = array("Content-Type" => 'application/json');
+
+        $serializer = $this->container->get('jms_serializer');
+
+        $requestUrl = $this->container->getParameter('reswebMarketURL') . '/' . $airports . ".json";
+
+        $response = $buzz->get($requestUrl, $headers);
+        /** @var Market $market */
+        $market = $serializer->deserialize($response->getContent(), 'Alex\AlexBundle\Entity\Resweb\Market', 'json');
+
+        return $market->getReswebid();
 
     }
 
@@ -157,65 +165,6 @@ class DefaultController extends Controller
         $getFlightAvailInput->setPayloadAttributes($payloadAttributes);
 
         return $getFlightAvailInput;
-
-    }
-
-    /**
-     * @param GetFlightAvailInput $getFlightAvailInput
-     * @return string
-     */
-    public function serializeFlightAvailInput($getFlightAvailInput)
-    {
-
-        $serializer = $this->container->get('jms_serializer');
-        $serializedGetFlightAvailInput = $serializer->serialize($getFlightAvailInput, 'json');
-
-        return $serializedGetFlightAvailInput;
-
-    }
-
-    /**
-     * @param string $serializedGetFlightAvailInput
-     * @return string
-     */
-    public function getFlightAvailRequest($serializedGetFlightAvailInput)
-    {
-
-        $buzz = $this->container->get('buzz');
-        $headers = array("Content-Type" => 'application/json');
-        $response = $buzz->post(
-            $this->container->getParameter('flightRequestURL'),
-            $headers,
-            $serializedGetFlightAvailInput
-        );
-
-        //echo $serializedGetFlightAvailInput;
-        return $response;
-
-    }
-
-    /**
-     * @return integer
-     * @param string $fromAirport
-     * @param string $toAirport
-     */
-    public function getMarketIdRequest($fromAirport, $toAirport)
-    {
-
-        $airports = $fromAirport . $toAirport;
-
-        $buzz = $this->container->get('buzz');
-        $headers = array("Content-Type" => 'application/json');
-
-        $serializer = $this->container->get('jms_serializer');
-
-        $requestUrl = $this->container->getParameter('reswebMarketURL') . '/' . $airports . ".json";
-
-        $response = $buzz->get($requestUrl, $headers);
-        /** @var Market $market */
-        $market = $serializer->deserialize($response->getContent(), 'Alex\AlexBundle\Entity\Resweb\Market', 'json');
-
-        return $market->getReswebid();
 
     }
 
@@ -319,4 +268,5 @@ class DefaultController extends Controller
 
         return $payloadAttributes;
     }
+
 }
