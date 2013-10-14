@@ -22,7 +22,7 @@ abstract class G4WebTestCase extends WebTestCase
     protected static $coverage = null;
 
     /**
-     * Start the code coverage (the service will check if code coverage is enabled in parameters.ini)
+     * Start the code coverage (the service will check if code coverage is enabled in parameters.yml)
      */
     public static function setUpBeforeClass()
     {
@@ -31,7 +31,7 @@ abstract class G4WebTestCase extends WebTestCase
     }
 
     /**
-     * Stop the code coverage (the service will check if code coverage is enabled in parameters.ini)
+     * Stop the code coverage (the service will check if code coverage is enabled in parameters.yml)
      */
     public static function tearDownAfterClass()
     {

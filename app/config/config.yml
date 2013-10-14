@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: parameters.local.ini }
 
 framework:
     #esi:             ~
@@ -94,9 +95,8 @@ jms_serializer:
             options: 0 # json_encode options bitmask
 
 parameters:
-    lookupURL: "http://svbjbshc1.sbx.allegiantair.com:8580/otares/v1/api/lookups"
-    flightRequestURL: "http://svgrwbws1.int.allegiantair.com:8080/resweb/rest/flight/getFlightAvail"
     jms_serializer.camel_case_naming_strategy.class: 'JMS\Serializer\Naming\IdenticalPropertyNamingStrategy'
+
 
 sensio_buzz:
     client_timeout: 25

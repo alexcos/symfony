@@ -1,3 +1,7 @@
 alex_alex_homepage:
-    pattern:  /hello/{name}
+    path:  /hello/{name}
     defaults: { _controller: AlexAlexBundle:Default:index }
+
+flights:
+    path:      /SearchFlightsByDate
+    defaults:  { _controller: AlexAlexBundle:Default:searchFlights }

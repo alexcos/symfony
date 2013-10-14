@@ -33,29 +33,60 @@ class DefaultControllerTest extends WebTestCase
         $this->controller->setContainer($this->client->getContainer());
     }
 
-    public function testBuzzRequest() {
+        public function testBuzzRequest() {
 
-        $buzz = $this->client->getContainer()->get('buzz');
+            $buzz = $this->client->getContainer()->get('buzz');
 
-        $headers = array("Content-Type" => "application/json");
+            $headers = array("Content-Type" => "application/json");
 
-        $response = $buzz->get('http://svbjbshc1.sbx.allegiantair.com:8580/otares/v1/api/lookups', $headers);
-        //echo $response;
-        $processedResponse = json_decode($response->getContent());
+            $response = $buzz->get('http://svbjbshc1.sbx.allegiantair.com:8580/otares/v1/api/lookups', $headers);
+            //echo $response;
+            $processedResponse = json_decode($response->getContent());
 
-        $this->assertTrue(isset($processedResponse->CustomerRole));
-    }
+            $this->assertTrue(isset($processedResponse->CustomerRole));
+        }
 
-    public function testControllerRequest() {
-        $processedResponse = $this->controller->requestService('http://svbjbshc1.sbx.allegiantair.com:8580/otares/v1/api/lookups', "application/json");
-        $this->assertTrue(isset($processedResponse->CustomerRole));
-    }
+        public function testControllerRequest() {
+            $processedResponse = $this->controller->requestService('http://svbjbshc1.sbx.allegiantair.com:8580/otares/v1/api/lookups', "application/json");
+            $this->assertTrue(isset($processedResponse->CustomerRole));
+        }
 
     public function testGetFlightAvailInput() {
         $data = new SearchData();
         $data->date = "2013-11-19";
-        $data->departAirport = "BLI";
+        $data->departAirport = "BIL";
         $data->arriveAirport = "LAS";
         $response = $this->controller->searchFlightsByDate($data);
+       // echo $response;
+    }
+
+    public function testGetMarketId() {
+        $response = $this->controller->getMarketIdRequest("BIL","LAS");
+        $this->assertTrue($response == 1);
+
+    }
+
+    public function testSearchFlightsByDateAction() {
+
+        $data = new SearchData();
+        $data->date = "2013-11-19";
+        $data->departAirport = "BIL";
+        $data->arriveAirport = "LAS";
+
+        $serializer = $this->client->getContainer()->get('jms_serializer');
+        $json = $serializer->serialize($data, 'json');
+
+        //$response = $this->client->request('post', "http://localhost/app_dev.php/alex/searchFlights", array($json));
+
+        $buzz = $this->client->getContainer()->get('buzz');
+        $contentType = 'application/json';
+        $headers = array("Content-Type" => $contentType);
+
+        echo "SearchData JSON: ".$json;
+
+        $response = $buzz->post("http://localhost/symfony/web/app_dev.php/SearchFlightsByDate", $headers, $json);
+        echo $response->getContent();
+
+
     }
 }

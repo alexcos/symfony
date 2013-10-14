@@ -9,6 +9,8 @@
 
 namespace Alex\AlexBundle\Entity;
 
+use JMS\Serializer\Annotation\Type;
+
 /**
  * Class SearchData
  * @package Alex\AlexBundle\Entity
@@ -16,14 +18,17 @@ namespace Alex\AlexBundle\Entity;
 class SearchData {
 
     /**
+     * @Type("string")
      * @var string $date
      */
     public $date;
     /**
+     * @Type("string")
      * @var string $departAirport
      */
     public $departAirport;
     /**
+     * @Type("string")
      * @var string $arriveAirport
      */
     public $arriveAirport;
