@@ -9,3 +9,7 @@ homework_homework_homepage:
 homework_homework_raw:
     pattern:  /homework/raw/
     defaults: { _controller: HomeworkHomeworkBundle:Homework:raw }
+
+homework_homework_invalid:
+    pattern:  /homework/invalid/
+    defaults: { _controller: HomeworkHomeworkBundle:Homework:invalid }

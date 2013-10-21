@@ -35,9 +35,12 @@ class PayloadAttributes
     /** @var  string */
     protected $timeStamp;
 
+    /**
+     * Default constructor
+     */
     public function __construct()
     {
-        $this->property = new PropertyCollection();
+        $this->setProperty(new PropertyCollection());
     }
 
     /**
@@ -144,11 +147,11 @@ class PayloadAttributes
     {
         $outputArray = array(
             'property' => $this->getProperty()->toArray(),
-            'bookingTypeID' => $this->getBookingTypeID(),
-            'bookingChannelID' => $this->getBookingChannelID(),
-            'transactionIdentifier' => $this->getTransactionIdentifier(),
             'version' => $this->getVersion(),
-            'timeStamp' => $this->getTimeStamp()
+            'timeStamp' => $this->getTimeStamp(),
+            'bookingChannelID' => $this->getBookingChannelID(),
+            'bookingTypeID' => $this->getBookingTypeID(),
+            'transactionIdentifier' => $this->getTransactionIdentifier(),
         );
 
         return $outputArray;

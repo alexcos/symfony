@@ -59,6 +59,23 @@ class HomeworkController extends Controller
 
     }
 
+    /** Returns the resweb getSeatMap Response for an invalid request
+     *
+     * @return Response
+     *
+     */
+    public function invalidAction()
+    {
+
+        $seatmapService = $this->getSeatmapService();
+
+        $seatmapRequest = $seatmapService->createInvalidSeatmapRequest();
+        $response = $seatmapService->getSeatmaps($seatmapRequest);
+
+        return $response;
+
+    }
+
     /** Make a post request to the getSeatmaps resweb service an print the Response
      *
      * @return \Buzz\Message\Response

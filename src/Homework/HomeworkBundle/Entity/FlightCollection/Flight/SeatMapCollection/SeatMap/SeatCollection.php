@@ -19,13 +19,13 @@ use Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMapCollection\Sea
  */
 class SeatCollection
 {
-    /** @var  array */
+    /** @var  Seat[] */
     protected $seats;
 
     /** Default constructor */
     public function __construct()
     {
-        $this->seats = array();
+        $this->setSeats(array());
     }
 
     /**
@@ -98,7 +98,7 @@ class SeatCollection
      *
      * @param Seat $flight
      */
-    public function addSeat(Seat $seat)
+    public function addSeat($seat)
     {
         $this->seats[] = $seat;
     }

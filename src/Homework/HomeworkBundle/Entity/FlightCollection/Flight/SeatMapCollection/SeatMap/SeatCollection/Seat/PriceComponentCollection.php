@@ -14,6 +14,7 @@ use
 
 /**
  * Class PriceComponentCollection
+ *
  * @package Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMap\Seat\Seat
  */
 class PriceComponentCollection
@@ -97,7 +98,7 @@ class PriceComponentCollection
      *
      * @param PriceComponent $priceComponentOptional
      */
-    public function addPriceComponent(PriceComponent $priceComponentOptional)
+    public function addPriceComponent($priceComponentOptional)
     {
         $this->priceComponentOptionals[] = $priceComponentOptional;
     }

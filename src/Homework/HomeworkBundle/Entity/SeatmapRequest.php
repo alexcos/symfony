@@ -10,8 +10,8 @@
 namespace Homework\HomeworkBundle\Entity;
 
 use Homework\HomeworkBundle\Entity\FlightCollection;
-use Homework\HomeworkBundle\Entity\CallerInfo;
-use Homework\HomeworkBundle\Entity\PayloadAttributes;
+use Homework\HomeworkBundle\Entity\SeatmapRequest\CallerInfo;
+use Homework\HomeworkBundle\Entity\SeatmapRequest\PayloadAttributesSeatMapRequest;
 
 /** Entity class for a Seatmap Request
  *
@@ -27,11 +27,18 @@ class SeatmapRequest
     /** @var  CallerInfo */
     protected $callerInfo;
 
-    /** @var  PayloadAttributes */
+    /** @var  PayloadAttributesSeatMapRequest */
     protected $payloadAttributes;
 
+    public function __construct()
+    {
+        $this->setFlight(new FlightCollection());
+        $this->setCallerInfo(new CallerInfo());
+        $this->setPayloadAttributes(new PayloadAttributesSeatMapRequest());
+    }
+
     /**
-     * @param \Homework\HomeworkBundle\Entity\CallerInfo $callerInfo
+     * @param CallerInfo $callerInfo
      */
     public function setCallerInfo($callerInfo)
     {
@@ -39,7 +46,7 @@ class SeatmapRequest
     }
 
     /**
-     * @return \Homework\HomeworkBundle\Entity\CallerInfo
+     * @return CallerInfo
      */
     public function getCallerInfo()
     {
@@ -63,7 +70,7 @@ class SeatmapRequest
     }
 
     /**
-     * @param \Homework\HomeworkBundle\Entity\PayloadAttributes $payloadAttributes
+     * @param PayloadAttributesSeatMapRequest $payloadAttributes
      */
     public function setPayloadAttributes($payloadAttributes)
     {
@@ -71,7 +78,7 @@ class SeatmapRequest
     }
 
     /**
-     * @return \Homework\HomeworkBundle\Entity\PayloadAttributes
+     * @return PayloadAttributesSeatMapRequest
      */
     public function getPayloadAttributes()
     {

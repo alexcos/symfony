@@ -97,7 +97,7 @@ class SeatMapCollection
      *
      * @param SeatMap $seatMap
      */
-    public function addSeatMap(SeatMap $seatMap)
+    public function addSeatMap($seatMap)
     {
         $this->seatMaps[] = $seatMap;
     }

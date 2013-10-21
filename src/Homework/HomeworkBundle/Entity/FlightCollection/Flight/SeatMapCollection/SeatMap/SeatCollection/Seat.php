@@ -50,6 +50,7 @@ class Seat
      */
     protected $adjacentInfo;
 
+    /** @var  array */
     protected $restriction; //TODO collection, entity ?!
 
     /** @var  bool */
@@ -62,6 +63,8 @@ class Seat
     public function __construct()
     {
         $this->setPriceComponentOptional(new PriceComponentCollection());
+        $this->setPriceComponent(new PriceComponentCollection());
+        $this->setRestriction(array());
     }
 
     /**
@@ -250,7 +253,7 @@ class Seat
             'size' => $this->getSize(),
             'row' => $this->getRow(),
             'position' => $this->getPosition(),
-            'priceComponent' => $this->getPriceComponent(), //TODO toArray()
+            'priceComponent' => $this->getPriceComponent()->toArray(),
             'priceComponentOptional' => $this->getPriceComponentOptional()->toArray(),
             'col' => $this->getCol(),
             'cabinCode' => $this->getCabinCode(),

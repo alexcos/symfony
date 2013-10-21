@@ -10,6 +10,8 @@
 namespace Homework\HomeworkBundle\Entity;
 
 use Homework\HomeworkBundle\Entity\FlightCollection\Flight;
+use Homework\HomeworkBundle\Entity\SeatmapResponse\ErrorCollection;
+use Homework\HomeworkBundle\Entity\SeatmapResponse\PayloadAttributesSeatmapResponse;
 
 /**
  * Class SeatmapResponse
@@ -22,9 +24,7 @@ class SeatmapResponse
     /** @var  FlightCollection */
     protected $flight;
 
-    /** @var  array
-     * TODO create real type and collection
-     * */
+    /** @var  ErrorCollection */
     protected $error;
 
     /** @var  PayloadAttributes */
@@ -38,14 +38,14 @@ class SeatmapResponse
     /** Default constructor */
     public function __construct()
     {
-        $this->flight = new FlightCollection();
-        $this->error = array();
-        $this->warning = array();
-        $this->payloadAttributes = new PayloadAttributes();
+        $this->setFlight(new FlightCollection());
+        $this->setError(new ErrorCollection());
+        $this->setWarning(array());
+        $this->setPayloadAttributes(new PayloadAttributesSeatmapResponse());
     }
 
     /**
-     * @param array $error
+     * @param ErrorCollection $error
      */
     public function setError($error)
     {
@@ -53,7 +53,7 @@ class SeatmapResponse
     }
 
     /**
-     * @return array
+     * @return ErrorCollection
      */
     public function getError()
     {
@@ -77,7 +77,7 @@ class SeatmapResponse
     }
 
     /**
-     * @param \Homework\HomeworkBundle\Entity\PayloadAttributes $payloadAttributes
+     * @param PayloadAttributesSeatmapResponse $payloadAttributes
      */
     public function setPayloadAttributes($payloadAttributes)
     {
@@ -85,7 +85,7 @@ class SeatmapResponse
     }
 
     /**
-     * @return \Homework\HomeworkBundle\Entity\PayloadAttributes
+     * @return PayloadAttributesSeatmapResponse
      */
     public function getPayloadAttributes()
     {
@@ -117,8 +117,8 @@ class SeatmapResponse
     {
         $outputArray = array(
             'flight' => $this->getFlight()->toArray(),
-            'error' => $this->getError(),
-            'payloadAttributes' => $this->getPayloadAttributes(),
+            'error' => $this->getError()->toArray(),
+            'payloadAttributes' => $this->getPayloadAttributes()->toArray(),
             'warning' => $this->getWarning()
         );
 
@@ -131,7 +131,9 @@ class SeatmapResponse
      */
     public function toJson()
     {
-        return json_encode($this->toArray());
+        $array = $this->toArray();
+
+        return json_encode($array);
     }
 
     /** Populate class fields from stcClass entity
@@ -141,17 +143,17 @@ class SeatmapResponse
     public function fromStdClass($stdClass)
     {
         if (isset($stdClass->payloadAttributes)) {
-            $this->setPayloadAttributes(new PayloadAttributes());
             $this->getPayloadAttributes()->fromStdClass($stdClass->payloadAttributes);
         }
 
-        if (isset($stdClass->flight)) {
-            $flightStdClass = $stdClass->flight[0];
-            $flight = new Flight();
-            $flight->fromStdClass($flightStdClass);
-
+        if (isset($stdClass->flight) && is_array($stdClass->flight)) {
             $this->setFlight(new FlightCollection());
             $this->getFlight()->fromStdClass($stdClass->flight);
+        }
+
+        if (isset($stdClass->error) && is_array($stdClass->error)) {
+            $this->setError(new ErrorCollection());
+            $this->getError()->fromStdClass($stdClass->error);
         }
     }
 

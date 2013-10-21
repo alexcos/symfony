@@ -26,7 +26,7 @@ class PropertyCollection
     /** Default Constructor */
     public function __construct()
     {
-        $this->properties = array();
+        $this->setProperties(array());
     }
 
     /**
@@ -72,7 +72,7 @@ class PropertyCollection
      *
      * @param Property $property
      */
-    public function addProperty(Property $property)
+    public function addProperty($property)
     {
         $this->properties[] = $property;
     }

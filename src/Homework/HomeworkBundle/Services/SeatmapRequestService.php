@@ -171,14 +171,21 @@ class SeatmapRequestService
         $flight2 = new Flight();
         $flight2->setRph('departing');
         $flight2->setCarrierCode('G4');
-        $flight2->setNbr('276');
-        $flight2->setDepartDate('2012-11-13');
+        $flight2->setNbr('581');
+        $flight2->setDepartDate('2013-10-24');
+
+        $flight3 = new Flight();
+        $flight3->setRph('returning');
+        $flight3->setCarrierCode('G4');
+        $flight3->setNbr('581');
+        $flight3->setDepartDate('2013-10-25');
 
         $flights = new FlightCollection();
         $flights->addFlight($flight);
-        //$flights->addFlight($flight2);
+        $flights->addFlight($flight2);
+        $flights->addFlight($flight3);
 
-        $callerInfo = new CallerInfo();
+        $callerInfo = new SeatmapRequest\CallerInfo();
         $callerInfo->setName('symfonyuser');
         $callerInfo->setPwd('');
         $callerInfo->setAppName('G4\\SeatMapBundle\\Controller\\SeatMapController');
@@ -191,6 +198,45 @@ class SeatmapRequestService
         $payloadAttributes->setBookingChannelID(1);
         $payloadAttributes->setTransactionIdentifier("507287f2725e7");
         $payloadAttributes->setVersion(1);
+        $payloadAttributes->setTimeStamp("2013-10-08T12:46:40");
+
+        $seatmapRequest = new SeatmapRequest();
+        $seatmapRequest->setFlight($flights);
+        $seatmapRequest->setCallerInfo($callerInfo);
+        $seatmapRequest->setPayloadAttributes($payloadAttributes);
+
+        return $seatmapRequest;
+    }
+
+    /**
+     * @return SeatmapRequest
+     */
+    public function createInvalidSeatmapRequest()
+    {
+        $flight = new Flight();
+        $flight->setRph('asd');
+        $flight->setCarrierCode('asd');
+        $flight->setNbr('asd');
+        $flight->setDepartDate('3-10-17');
+
+        $flights = new FlightCollection();
+        $flights->addFlight($flight);
+
+        $callerInfo = new SeatmapRequest\CallerInfo();
+        $callerInfo->setName(
+            'symfonyuserasugasiugfviuasdbvjhasgbkdjvhgaskjhgfsvjhdgehjvghjkvdfsgkhjsdfgkjhsdfashfgvasjhdgfjahsvgdfhjgaasjdkfgkasjhdgfkjas'
+        );
+        $callerInfo->setPwd('asduiygfsadghkvjashdgfjkhdsgfhjkgshkjasgfkjasdgkja');
+        $callerInfo->setAppName('G4\\SeatMapBundle\\Controller\\SeatMa');
+        $callerInfo->setModuleName('');
+        $callerInfo->setSessionID('7Z5Ao8e_ifoH6gCApirFskkBQ3n_B2_ZylIDkwqM');
+        $callerInfo->setIpAddress('slijghlksdjfh');
+
+        $payloadAttributes = new PayloadAttributes();
+        $payloadAttributes->setBookingTypeID(7);
+        $payloadAttributes->setBookingChannelID(-4);
+        $payloadAttributes->setTransactionIdentifier("507287f2725asdasde7");
+        $payloadAttributes->setVersion(-1);
         $payloadAttributes->setTimeStamp("2013-10-08T12:46:40");
 
         $seatmapRequest = new SeatmapRequest();

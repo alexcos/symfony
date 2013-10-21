@@ -211,15 +211,15 @@ class Flight
     public function toArray()
     {
         $outputArray = array(
-            'rph' => $this->getRph(),
-            'carrierCode' => $this->getCarrierCode(),
             'nbr' => $this->getNbr(),
-            'departDate' => $this->getDepartDate(),
+            'rph' => $this->getRph(),
             'marketID' => $this->getMarketID(),
+            'departDate' => $this->getDepartDate(),
             'seatMap' => $this->getSeatMap()->toArray(),
             'overrideReasonId' => $this->getOverrideReasonId(),
             'adjustedPrice' => $this->getAdjustedPrice(),
             'carrierCode' => $this->getCarrierCode(),
+            'overrideReasonId' => $this->getOverrideReasonId(),
             'origItinerary' => $this->getOrigItinerary()
         );
 

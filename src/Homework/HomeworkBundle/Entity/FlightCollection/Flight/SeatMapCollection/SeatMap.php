@@ -35,8 +35,12 @@ class SeatMap
     /** @var  integer */
     protected $lastRow;
 
-    public function __construct() {
-        $this->seat = new SeatCollection();
+    /**
+     * Default constructor
+     */
+    public function __construct()
+    {
+        $this->setSeat(new SeatCollection());
     }
 
     /**
@@ -104,7 +108,7 @@ class SeatMap
     }
 
     /**
-     * @param \Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMap\SeatCollection $seat
+     * @param SeatCollection $seat
      */
     public function setSeat($seat)
     {
@@ -112,7 +116,7 @@ class SeatMap
     }
 
     /**
-     * @return \Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMap\SeatCollection
+     * @return SeatCollection
      */
     public function getSeat()
     {
@@ -181,7 +185,6 @@ class SeatMap
         $stdClass = json_decode($json);
         $this->fromStdClass($stdClass);
     }
-
 
 
 }

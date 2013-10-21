@@ -9,6 +9,8 @@
 
 namespace Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMapCollection\SeatMap\SeatCollection\Seat\PriceComponentCollection;
 
+use
+    Homework\HomeworkBundle\Entity\FlightCollection\Flight\SeatMapCollection\SeatMap\SeatCollection\Seat\PriceComponentCollection;
 use Homework\HomeworkBundle\Entity\PropertyCollection;
 
 /** PriceComponentOptional entity class
@@ -36,15 +38,15 @@ class PriceComponent
     /** @var  string */
     protected $code;
 
-    /** @var array TODO type ?! */
-    protected $priceComponent; // TODO collection and entity
+    /** @var PriceComponentCollection */
+    protected $priceComponent;
 
     /** Default constructor */
     public function __construct()
     {
         $this->setProperty(new PropertyCollection());
         $this->setTag(array());
-        $this->setPriceComponent(array());
+        $this->setPriceComponent(new PriceComponentCollection());
     }
 
     /**
@@ -80,7 +82,7 @@ class PriceComponent
     }
 
     /**
-     * @param mixed $priceComponent
+     * @param PriceComponentCollection $priceComponent
      */
     public function setPriceComponent($priceComponent)
     {
@@ -88,7 +90,7 @@ class PriceComponent
     }
 
     /**
-     * @return mixed
+     * @return PriceComponentCollection
      */
     public function getPriceComponent()
     {
@@ -173,7 +175,7 @@ class PriceComponent
             'source' => $this->getSource(),
             'tag' => $this->getTag(), //TODO toArray()
             'code' => $this->getCode(),
-            'priceComponent' => $this->getPriceComponent() // TODO toArray()
+            'priceComponent' => $this->getPriceComponent()->toArray()
         );
 
         return $outputArray;
@@ -207,7 +209,7 @@ class PriceComponent
             is_array($stdClass->priceComponent)
         ) {
             foreach ($stdClass->property as $propertyStd) {
-                $property = new PropertyCollection\Property();
+                $property = new PriceComponentCollection\PriceComponent\PropertyPriceComponent();
                 $property->fromStdClass($propertyStd);
                 $this->getProperty()->addProperty($property);
             }
@@ -218,8 +220,10 @@ class PriceComponent
                 //TODO assign tag
             }
             $this->setCode($stdClass->code);
-            foreach ($stdClass->priceComponent as $component) {
-                //TODO assign code
+            foreach ($stdClass->priceComponent as $priceComponentStd) {
+                $priceComponent = new PriceComponent();
+                $priceComponent->fromStdClass($priceComponentStd);
+                $this->getProperty()->addProperty($priceComponent);
             }
 
         }

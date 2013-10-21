@@ -18,13 +18,13 @@ use Homework\HomeworkBundle\Entity\FlightCollection\Flight;
  */
 class FlightCollection
 {
-    /** @var  array */
+    /** @var  Flight[] */
     protected $flights;
 
     /** Default constructor */
     public function __construct()
     {
-        $this->flights = array();
+        $this->setFlights(array());
     }
 
     /**
@@ -97,7 +97,7 @@ class FlightCollection
      *
      * @param FlightCollection\Flight $flight
      */
-    public function addFlight(Flight $flight)
+    public function addFlight($flight)
     {
         $this->flights[] = $flight;
     }

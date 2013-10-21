@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Homework\HomeworkBundle\Entity;
+namespace Homework\HomeworkBundle\Entity\SeatmapRequest;
 
 /** CallerInfo entity
  *
