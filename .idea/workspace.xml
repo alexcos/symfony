@@ -2,27 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe54e80c-0600-4d0d-816e-6ca7df018cca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapResponse/ErrorCollection/Error.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapResponse/ErrorCollection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest/PayloadAttributesSeatMapRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapResponse/PayloadAttributesSeatmapResponse.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat/PriceComponentCollection/PriceComponent/PropertyPriceComponent.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/CallerInfo.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest/CallerInfo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Controller/HomeworkController.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Controller/HomeworkController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/PayloadAttributes.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/PayloadAttributes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat/PriceComponentCollection/PriceComponent.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat/PriceComponentCollection/PriceComponent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat/PriceComponentCollection.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat/PriceComponentCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/PropertyCollection.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/PropertyCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection/Seat.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap/SeatCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection/SeatMap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/FlightCollection/Flight/SeatMapCollection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Services/SeatmapRequestService.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Services/SeatmapRequestService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapResponse.php" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Homework/HomeworkBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="symfony.iws" />
@@ -42,7 +21,7 @@
     <file path="/Flight.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1382094179451" ignored="false" />
     <file path="/DepartArriveRequest.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381403300521" ignored="false" />
     <file path="/SearchData.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381748097385" ignored="false" />
-    <file path="/Dummy.txt" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1382337232554" ignored="false" />
+    <file path="/Dummy.txt" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1382348264911" ignored="false" />
     <file path="/Market.php" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381733195360" ignored="false" />
     <file path="/parameters.ini.yml" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1381738567476" ignored="false" />
     <file path="/routing.yml" changelist="fe54e80c-0600-4d0d-816e-6ca7df018cca" time="1382342480008" ignored="false" />
@@ -183,8 +162,10 @@
       <file leaf-file-name="SeatmapRequest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="61" selection-start="320" selection-end="320" vertical-scroll-proportion="-0.026501767">
-              <folding />
+            <state line="54" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.5432862">
+              <folding>
+                <element signature="e#206#258#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1499,7 +1480,11 @@
       <created>1382337288384</created>
       <updated>1382337288384</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added SearchFlightByDate as a service, through the FlightSearchService.php class">
+      <created>1382348271189</created>
+      <updated>1382348271189</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1724,8 +1709,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Homework/HomeworkBundle/Entity/SeatmapRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="61" selection-start="320" selection-end="320" vertical-scroll-proportion="-0.026501767">
-          <folding />
+        <state line="54" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.5432862">
+          <folding>
+            <element signature="e#206#258#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
