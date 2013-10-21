@@ -8,6 +8,7 @@
  */
 
 namespace Alex\AlexBundle\Entity;
+
 use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\XmlList;
@@ -19,12 +20,11 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Class Lookup
  * @package Alex\AlexBundle\Entity
  */
-class Lookup {
+class Lookup
+{
 
     /**
-     *
      * @Type("ArrayCollection<Alex\AlexBundle\Entity\CustomerRole>")
-     *
      */
     private $CustomerRole;
     /**
@@ -106,7 +106,8 @@ class Lookup {
     private $AuthType;
 
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->setCustomerRole(new ArrayCollection());
     }
 
@@ -430,7 +431,6 @@ class Lookup {
     {
         return $this->VoucherType;
     }
-
 
 
 }

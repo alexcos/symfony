@@ -7,6 +7,8 @@ use Alex\AlexBundle\Entity\Lookup;
 use Alex\AlexBundle\Entity\SearchData;
 use Alex\AlexBundle\SearchServices\FlightSearchService;
 use Buzz\Message\Request;
+use Homework\HomeworkBundle\Controller\HomeworkController;
+use Homework\HomeworkBundle\Entity\SeatmapRequest;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Serializer\Serializer;
@@ -27,12 +29,19 @@ class DefaultControllerTest extends WebTestCase
      */
     private $controller;
 
+    /**
+     * @var DefaultController
+     */
+    private $controller2;
+
     /** setUp function */
     public function setUp()
     {
         $this->client = static::createClient();
         $this->controller = new DefaultController();
+        $this->controller2 = new HomeworkController();
         $this->controller->setContainer($this->client->getContainer());
+        $this->controller2->setContainer($this->client->getContainer());
     }
 
     public function testBuzzRequest()
@@ -113,5 +122,14 @@ class DefaultControllerTest extends WebTestCase
 
         $response = $flightSearchService->searchFlightsByDate($data);
         echo $response;
+    }
+
+    public function testHomework()
+    {
+
+        $sr = $this->client->getContainer()->get('homework_homework.seatmap_service')->createSeatmapRequest();
+
+        $this->controller2->indexAction($sr);
+        $this->assertTrue(true);
     }
 }

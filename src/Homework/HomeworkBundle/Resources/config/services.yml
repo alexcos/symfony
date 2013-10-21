@@ -1,0 +1,7 @@
+parameters:
+    homework_homework.seatmap_service.class: Homework\HomeworkBundle\Services\SeatmapRequestService
+
+services:
+    homework_homework.seatmap_service:
+        class: %homework_homework.seatmap_service.class%
+        arguments: [@service_container]

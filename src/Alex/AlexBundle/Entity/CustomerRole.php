@@ -18,18 +18,19 @@ use Doctrine\Common\Collections\ArrayCollection;
  * Class CustomerRole
  * @package Alex\AlexBundle\Entity
  */
-class CustomerRole {
+class CustomerRole
+{
 
     /** @SerializedName("id")
-     *  @Type("integer")
+     * @Type("integer")
      * */
     private $id;
     /** @SerializedName("name")
-     *  @Type("string")
+     * @Type("string")
      */
     private $name;
     /** @SerializedName("customerPermission")
-     *  @Type("ArrayCollection<Alex\AlexBundle\Entity\CustomerPermission>")
+     * @Type("ArrayCollection<Alex\AlexBundle\Entity\CustomerPermission>")
      */
     private $customerPermission;
 

@@ -40,7 +40,7 @@ class DefaultController extends Controller
     public function searchFlightsAction()
     {
 
-        $json = $this->getRequest()->getContent(); //request->get("searchData");
+        $json = $this->getRequest()->getContent();
 
         $serializer = $this->container->get('jms_serializer');
 
@@ -57,8 +57,6 @@ class DefaultController extends Controller
 
 
     /**
-     * @param $url
-     * @param $contentType
      * @return Lookup
      */
     public function requestServiceAndConvert()
@@ -82,6 +80,7 @@ class DefaultController extends Controller
 
     /**
      * @param SearchData $data
+     *
      * @return string
      */
     public function searchFlightsByDate(SearchData $data)
@@ -95,7 +94,10 @@ class DefaultController extends Controller
 
     }
 
-    /** @param SearchData $data */
+    /** @param SearchData $data
+     *
+     * @return string
+     */
     public function createFlightAvailInput(SearchData $data)
     {
 
@@ -142,8 +144,6 @@ class DefaultController extends Controller
 
         $payloadAttributes = $this->buildPayloadAttributes(1, 1, "525524f4c38ff", 1, "2013-10-09T09:42:12");
 
-        //$getFlightAvailInput = $this->createFlightAvailInput($flightVoucher, $promoCode, $travelerProfile, $classOfService, $flight, $departArriveRequest, $airportOfOrigin, $maxStops, $callerInfo, $payloadAttributes);
-
         $getFlightAvailInput = new flight\GetFlightAvailInput();
         $getFlightAvailInput->setFlightVoucher($flightVoucher);
         $getFlightAvailInput->setPromoCode($promoCode);
@@ -162,6 +162,7 @@ class DefaultController extends Controller
 
     /**
      * @param GetFlightAvailInput $getFlightAvailInput
+     *
      * @return string
      */
     public function serializeFlightAvailInput($getFlightAvailInput)
@@ -176,6 +177,7 @@ class DefaultController extends Controller
 
     /**
      * @param string $serializedGetFlightAvailInput
+     *
      * @return string
      */
     public function getFlightAvailRequest($serializedGetFlightAvailInput)
@@ -189,15 +191,15 @@ class DefaultController extends Controller
             $serializedGetFlightAvailInput
         );
 
-        //echo $serializedGetFlightAvailInput;
         return $response;
 
     }
 
     /**
-     * @return integer
      * @param string $fromAirport
      * @param string $toAirport
+     *
+     * @return integer
      */
     public function getMarketIdRequest($fromAirport, $toAirport)
     {
@@ -221,12 +223,9 @@ class DefaultController extends Controller
 
     /**
      * @param string $rph
-     * @param DepartArriveRequestType $type
+     * @param flight\DepartArriveRequestType $type
      * @param bool $departBased
-     *
-     * date format 'Y-M-D"
      * @param string $requestDate
-     *
      * @param integer $requestDateMinusDays
      * @param integer $requestDatePlusDays
      * @param string $requestTime
@@ -280,6 +279,7 @@ class DefaultController extends Controller
      * @param string $moduleName
      * @param string $sessionID
      * @param string $ipAddress
+     *
      * @return UserProfile
      */
     public function buildUserProfile($name, $pwd, $appName, $moduleName, $sessionID, $ipAddress)
@@ -301,6 +301,7 @@ class DefaultController extends Controller
      * @param string $transactionIdentifier
      * @param integer $version
      * @param string $timeStamp
+     *
      * @return PayLoadAttributes
      */
     public function buildPayloadAttributes(

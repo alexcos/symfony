@@ -20,16 +20,17 @@ use Symfony\Bundle\FrameworkBundle\Client;
 class FlightSearchService
 {
 
-    /** @var Container  */
+    /** @var Container */
     private $container;
 
-    function __construct($container)
+    public function __construct($container)
     {
         $this->container = $container;
     }
 
     /**
      * @param SearchData $data
+     *
      * @return string
      */
     public function searchFlightsByDate(SearchData $data)
@@ -45,6 +46,7 @@ class FlightSearchService
 
     /**
      * @param GetFlightAvailInput $getFlightAvailInput
+     *
      * @return string
      */
     public function serializeFlightAvailInput($getFlightAvailInput)
@@ -59,6 +61,7 @@ class FlightSearchService
 
     /**
      * @param string $serializedGetFlightAvailInput
+     *
      * @return string
      */
     public function getFlightAvailRequest($serializedGetFlightAvailInput)
@@ -79,9 +82,10 @@ class FlightSearchService
 
 
     /**
-     * @return integer
      * @param string $fromAirport
      * @param string $toAirport
+     *
+     * @return integer
      */
     public function getMarketIdRequest($fromAirport, $toAirport)
     {
@@ -103,7 +107,10 @@ class FlightSearchService
 
     }
 
-    /** @param SearchData $data */
+    /** @param SearchData $data
+     *
+     * @return flight\GetFlightAvailInput
+     */
     public function createFlightAvailInput(SearchData $data)
     {
 
@@ -172,10 +179,7 @@ class FlightSearchService
      * @param string $rph
      * @param DepartArriveRequestType $type
      * @param bool $departBased
-     *
-     * date format 'Y-M-D"
      * @param string $requestDate
-     *
      * @param integer $requestDateMinusDays
      * @param integer $requestDatePlusDays
      * @param string $requestTime

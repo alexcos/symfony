@@ -12,7 +12,8 @@ namespace Alex\AlexBundle\Entity\Resweb;
 use JMS\Serializer\Annotation\Type;
 
 
-class Market {
+class Market
+{
 
     /**
      * @Type("integer")
@@ -35,7 +36,6 @@ class Market {
     {
         return $this->reswebid;
     }
-
 
 
 }

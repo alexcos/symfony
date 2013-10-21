@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new G4\AREBundle\G4AREBundle(),
+            new Cloud\TodayBundle\CloudTodayBundle(),
+            new Homework\HomeworkBundle\HomeworkHomeworkBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

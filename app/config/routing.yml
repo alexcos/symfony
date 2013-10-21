@@ -1,3 +1,11 @@
+homework_homework:
+    resource: "@HomeworkHomeworkBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cloud_today:
+    resource: "@CloudTodayBundle/Resources/config/routing.yml"
+    prefix:   /
+
 g4_are:
     resource: "@G4AREBundle/Resources/config/routing.yml"
     prefix:   /

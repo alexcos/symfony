@@ -17,14 +17,15 @@ use JMS\Serializer\Annotation\Type;
  * Class CustomerPermission
  * @package Alex\AlexBundle\Entity
  */
-class CustomerPermission {
+class CustomerPermission
+{
 
     /** @SerializedName("id")
-     *  @Type("integer")
+     * @Type("integer")
      * */
     private $id;
     /** @SerializedName("name")
-     *  @Type("string")
+     * @Type("string")
      */
     private $name;
 

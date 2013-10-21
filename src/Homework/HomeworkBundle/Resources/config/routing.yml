@@ -1,0 +1,11 @@
+homework_homework_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: HomeworkHomeworkBundle:Default:index }
+
+homework_homework_homepage:
+    pattern:  /homework/
+    defaults: { _controller: HomeworkHomeworkBundle:Homework:index }
+
+homework_homework_raw:
+    pattern:  /homework/raw/
+    defaults: { _controller: HomeworkHomeworkBundle:Homework:raw }
