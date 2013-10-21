@@ -30,6 +30,7 @@ class SeatmapRequest
     /** @var  PayloadAttributesSeatMapRequest */
     protected $payloadAttributes;
 
+    /** Default constructor */
     public function __construct()
     {
         $this->setFlight(new FlightCollection());

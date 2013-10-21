@@ -10,6 +10,7 @@
 namespace Homework\HomeworkBundle\Entity\SeatmapResponse\ErrorCollection;
 
 use Homework\HomeworkBundle\Entity\PropertyCollection;
+use Homework\HomeworkBundle\Entity\SeatmapResponse\ErrorCollection\Error\PropertyError;
 
 /**
  * Class Error
@@ -163,7 +164,7 @@ class Error
             isset($stdClass->errorDateTime)
         ) {
             foreach ($stdClass->property as $propertyStd) {
-                $property = new Property();
+                $property = new PropertyError();
                 $property->fromStdClass($propertyStd);
                 $this->getProperty()->addProperty($property);
             }
